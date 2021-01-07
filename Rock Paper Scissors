@@ -1,0 +1,48 @@
+#player input
+#bot input at the same time
+#check who won
+#restart/start game
+import random
+
+
+#bot selects random choice
+choices = ["rock", "paper", "scissors"]
+bot_choice = random.choice(choices)
+
+def player():
+    #player chooses move
+    player_choice = input("Pick either rock,paper, or scissors: ")
+    #keep asking the player to make a choice if it is not valid
+    while player_choice not in choices:
+        player_choice = input("Invalid input please pick an action: ")
+
+    return player_choice
+
+#store player_choice so it can be used in other functions
+player_choice = player()
+
+
+def check_who_won(player_choice):
+    game_run = True
+    # same choice is a tie
+    if bot_choice == player_choice:
+        print("It's a tie!")
+        game_run = False
+
+
+    #paper beats rock
+    #rock beats scissors
+    #scissors beats paper
+    return
+
+game_run = check_who_won(player_choice)
+
+def start_over():
+    if game_run == False:
+
+        pass
+
+
+def rock_paper_scissors():
+    check_who_won(player_choice)
+    start_over(game_run)
